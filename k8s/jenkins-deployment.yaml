@@ -18,6 +18,9 @@ spec:
           image: jenkins/jenkins:lts
           ports:
             - containerPort: 8080
+          env:
+            - name: JAVA_OPTS
+              value: "-Dhudson.security.csrf.GlobalCrumbIssuerConfiguration.DISABLE_CSRF_PROTECTION=true"
 ---
 apiVersion: v1
 kind: Service
